@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teon's Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+        nav a:hover {
+            color: #00aaff;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .hero button {
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .hero button:hover {
+            background-color: #0088cc;
+        }
+        section {
+            padding: 60px 20px;
+        }
+        .about, .projects, .contact {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        .about img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 200px;
+        }
+        .skills {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .skill {
+            margin: 10px;
+            text-align: center;
+        }
+        .skill img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .projects .project-item {
+            background-color: #111;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: auto;
+        }
+        .contact form input, .contact form textarea, .contact form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact form button {
+            background-color: #00aaff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact form button:hover {
+            background-color: #0088cc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            position: relative;
+        }
+        .footer-links {
+            margin: 10px 0;
+        }
+        .footer-links a {
+            margin: 0 10px;
+            color: #00aaff;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .back-to-top {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 15px;
+            background-color: #00aaff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-to-top:hover {
+            background-color: #0088cc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Teon</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hello! I'm Teon, a Software Engineering Student and Aspiring Web3 Developer</p>
+        <button>See My Work</button>
+    </div>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <img src="C:\Users\NFAWA\Desktop\teon\Untitled1.png" alt="Your Photo">
+        <p>I am a passionate web developer with a love for creating functional and user-friendly solutions. I have experience in HTML, CSS, JavaScript, and more.</p>
+        <div class="skills">
+            <div class="skill">
+                <img src="html-icon.png" alt="HTML Icon">
+                <p>HTML</p>
+            </div>
+            <div class="skill">
+                <img src="css-icon.png" alt="CSS Icon">
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                <img src="js-icon.png" alt="JavaScript Icon">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill">
+                <img src="python-icon.png" alt="Python Icon">
+                <p>Python</p>
+            </div>
+            <div class="skill">
+                <img src="blockchain-icon.png" alt="Blockchain Icon">
+                <p>Blockchain Basics</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-item">
+            <h3>Project 1: Portfolio Website</h3>
+            <p>A portfolio website to showcase my skills and projects.</p>
+        </div>
+        <div class="project-item">
+            <h3>Project 2: Blockchain Demo</h3>
+            <p>A simple blockchain implementation to understand its fundamentals.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p>Find me on:</p>
+        <div class="social">
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Teon. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </footer>
+</body>
+</html>
