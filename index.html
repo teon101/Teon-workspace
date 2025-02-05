@@ -113,6 +113,25 @@
             margin-bottom: 40px;
         }
 
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-content img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
         /* Projects Grid */
         .projects-grid {
             display: grid;
@@ -163,12 +182,14 @@
             margin-bottom: 20px;
         }
 
-        .project-front img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 3px;
-            margin-bottom: 15px;
+        .project-front h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-front p {
+            font-size: 1rem;
+            color: #ccc;
         }
 
         /* Contact Form */
@@ -266,6 +287,16 @@
             .hero h1 {
                 font-size: 3rem;
             }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-content img {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -304,7 +335,10 @@
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>I am a passionate web developer focused on creating beautiful and functional digital experiences. With expertise in modern web technologies, I bring ideas to life through clean code and intuitive design.</p>
+            <div class="about-content">
+                <img src="c:\Users\NFAWA\Pictures\teon 12.jpg" alt="About Me">
+                <p>I am a passionate web developer focused on creating beautiful and functional digital experiences. With expertise in modern web technologies, I bring ideas to life through clean code and intuitive design.</p>
+            </div>
         </section>
 
         <!-- Projects Section -->
@@ -313,9 +347,8 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-front">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Project 1">
-                        <h3>Blockchain Project</h3>
-                        <p>Decentralized Application</p>
+                        <h3>Blockchain Development</h3>
+                        <p>Decentralized Applications</p>
                     </div>
                     <div class="project-back">
                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled1-RDkQlCBqsXey7toANPTNtYTqm7e748.png" alt="Blockchain Icon">
@@ -325,7 +358,6 @@
                 </div>
                 <div class="project-card">
                     <div class="project-front">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Project 2">
                         <h3>Web Development</h3>
                         <p>Frontend Design</p>
                     </div>
@@ -337,7 +369,6 @@
                 </div>
                 <div class="project-card">
                     <div class="project-front">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Project 3">
                         <h3>Backend Development</h3>
                         <p>Server Infrastructure</p>
                     </div>
@@ -353,28 +384,34 @@
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Me</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" rows="6" required></textarea>
+            <form class="contact-form" action="https://formspree.io/f/xldgnqla" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" rows="6" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
             <div class="social-links">
                 <h3>Connect With Me</h3>
                 <div class="social-icons">
-                    <a href="https://github.com/yourusername" class="github" target="_blank">
+                    <a href="https://github.com/teon101" class="github" target="_blank">
                         <i class="fa fa-github"></i>
                     </a>
-                    <a href="https://twitter.com/yourusername" class="twitter" target="_blank">
+                    <a href="https://twitter.com/@teon101" class="twitter" target="_blank">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="https://wa.me/yourphonenumber" class="whatsapp" target="_blank">
+                    <a href="https://wa.me/08027990152" class="whatsapp" target="_blank">
                         <i class="fa fa-whatsapp"></i>
                     </a>
-                    <a href="https://linkedin.com/in/yourusername" class="linkedin" target="_blank">
+                    <a href="https://www.tiktok.com/@teon_x1" class="tiktok" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" width="40">
+                    </a>
+                    
+                    
+                    
+                    <a href="https://linkedin.com/in/Treasure-Nfawa" class="linkedin" target="_blank">
                         <i class="fa fa-linkedin"></i>
                     </a>
-                    <a href="mailto:your.email@example.com" class="email">
+                    <a href="mailto:teonx7@gmail.com" class="email">
                         <i class="fa fa-envelope"></i>
                     </a>
                 </div>
@@ -383,4 +420,3 @@
     </div>
 </body>
 </html>
-
