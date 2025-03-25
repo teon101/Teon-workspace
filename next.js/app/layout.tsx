@@ -6,7 +6,7 @@ export const metadata = {
   description: 'My professional portfolio showcasing my work and skills',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }): {
   return (
     <html lang="en">
       <body className="bg-zinc-900 text-white min-h-screen">
