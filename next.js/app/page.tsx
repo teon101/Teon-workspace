@@ -74,7 +74,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100 mb-4">
-              I'm a passionate developer, always leveling up—grinding, evolving, and pushing past limits. 🖤💻
+              I'm a passionate developer, always leveling up—grinding, evolving, and pushing past limits. 
             </p>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100 mb-4">
               With a solid foundation in frontend development, I craft responsive, high-performance interfaces that deliver elite user experiences. But that's just the beginning. I'm also deep into Web3 and blockchain, writing smart contracts and exploring decentralized technologies.
@@ -83,7 +83,7 @@ export default function Home() {
               Beyond coding, I dive into forex trading, analyzing market trends and refining my strategies. The goal? To merge AI, tech, and finance—maybe even build an AI-powered trading tool in the future. 🚀
             </p>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100">
-              And if you think this is just some basic portfolio—nah, this is next level. I'm always evolving. 🔥
+              And if you think this is just some basic portfolio—nah, this is next level. I'm always evolving. 
             </p>
           </div>
         </section>
@@ -104,8 +104,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-white">Portfolio Website</h3>
             </div>
             <p className="text-zinc-400 text-sm mt-3 leading-relaxed">
-              A fully responsive portfolio built with Next.js and Tailwind CSS, showcasing my skills with clean, modern design and smooth animations.
-            </p>
+              This ain’t just another random portfolio with basic HTML. This is something else—a fully responsive, next-level setup with Next.js, Tailwind, and React. Not your average “Hello World” site.
             <p className="text-zinc-500 text-xs mt-3">🛠 Tech Used: Next.js, Tailwind CSS, React</p>
             <div className="flex gap-4 mt-4">
               <SmoothScrollLink href="#" className="text-indigo-400 hover:text-indigo-300 text-sm">
@@ -129,7 +128,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-white">Coming Soon</h3>
             </div>
             <p className="text-zinc-400 text-sm mt-3 leading-relaxed">
-              An exciting new project is in the works! Stay tuned for updates and upcoming features. 
+              Working on my next build—expect something next-level soon. 
             </p>
             <p className="text-zinc-500 text-xs mt-3">🛠 Tech Stack: To be revealed soon...</p>
             <div className="flex gap-4 mt-4">
@@ -149,11 +148,11 @@ export default function Home() {
 
       {/* Contact Section */}
       <AnimatedSection id="contact" className="py-12">
-        <h2 className="text-3xl font-bold mb-8 border-b border-zinc-800 pb-2">Get In Touch</h2>
+        <h2 className="text-3xl font-bold mb-8 border-b border-zinc-800 pb-2">Whether it’s frontend, Web3, or something in between, hit me up⬇ </h2>
         <div className="bg-zinc-800 p-6 rounded-lg max-w-2xl mx-auto">
           <form className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-zinc-300 mb-1">Name</label>
+              <label htmlFor="name" className="block text-zinc-300 mb-1">Name or Nickname</label>
               <input 
                 type="text" 
                 id="name" 
