@@ -23,7 +23,9 @@ export default function Home() {
   // Tech Stack Badge Component
   const TechBadge = ({ icon: Icon, label }: { icon: React.ComponentType, label: string }) => (
     <div className="flex items-center bg-zinc-700 rounded-full px-3 py-1 text-xs text-zinc-300 gap-2">
-      <Icon className="w-3 h-3" />
+      const TechBadge = ({ icon: Icon, label }: { icon: React.ComponentType<{className?: string}>, label: string }) => (
+  ...
+)
       <span>{label}</span>
     </div>
   );
