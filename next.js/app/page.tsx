@@ -74,7 +74,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100 mb-4">
-              I'm a passionate developer, always leveling up—grinding, evolving, and pushing past limits. 🖤💻
+              I'm a passionate developer, always leveling up—grinding, evolving, and pushing past limits. 
             </p>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100 mb-4">
               With a solid foundation in frontend development, I craft responsive, high-performance interfaces that deliver elite user experiences. But that's just the beginning. I'm also deep into Web3 and blockchain, writing smart contracts and exploring decentralized technologies.
@@ -83,7 +83,7 @@ export default function Home() {
               Beyond coding, I dive into forex trading, analyzing market trends and refining my strategies. The goal? To merge AI, tech, and finance—maybe even build an AI-powered trading tool in the future. 🚀
             </p>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100">
-              And if you think this is just some basic portfolio—nah, this is next level. I'm always evolving. 🔥
+              And if you think this is just some basic portfolio—nah, this is next level. I'm always evolving. 🔥<br>Stay locked IN</br>
             </p>
           </div>
         </section>
