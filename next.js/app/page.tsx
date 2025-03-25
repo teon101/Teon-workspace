@@ -28,11 +28,12 @@ export default function Home() {
               </p>
             </div>
             <h2 className="text-2xl md:text-3xl text-zinc-400">
-              Frontend/Web3 Developer & Designer
+              Frontend & Web3 Developer | Designer
             </h2>
             <p className="text-lg text-zinc-300 max-w-xl">
-              I create beautiful, responsive websites with modern technologies
-              that help businesses grow and reach their goals.I also creates smart contract on blockchains and different testnets.....don't play
+              I craft clean, responsive websites with modern technologies that help businesses grow and reach their goals. I also build smart contracts on different blockchains and testnets—delivering high-performance solutions that don't just look good, they work. Whether it's interactive UIs or Web3 development, I bring ideas to life.
+              <br /><br />
+              Always learning. Always evolving. No limits. Let's build something legendary.
             </p>
             <div className="flex gap-4 pt-4">
               <SmoothScrollLink
@@ -73,22 +74,17 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100 mb-4">
-              I'm a passionate developer with expertise in building modern web applications. 
-              With a strong foundation in frontend technologies, I create responsive and 
-              user-friendly interfaces that deliver exceptional user experiences.
+              I'm a passionate developer, always leveling up—grinding, evolving, and pushing past limits. 🖤💻
             </p>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100 mb-4">
-              My journey in web development began several years ago, and I've been honing my 
-              skills ever since. I love learning new technologies and keeping up with the latest 
-              trends in the industry.
+              With a solid foundation in frontend development, I craft responsive, high-performance interfaces that deliver elite user experiences. But that's just the beginning. I'm also deep into Web3 and blockchain, writing smart contracts and exploring decentralized technologies.
+            </p>
+            <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100 mb-4">
+              Beyond coding, I dive into forex trading, analyzing market trends and refining my strategies. The goal? To merge AI, tech, and finance—maybe even build an AI-powered trading tool in the future. 🚀
             </p>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100">
-              In addition to web development, I am also deeply involved in forex trading. I analyze market 
-              trends, develop trading strategies, and continuously refine my approach to achieve 
-              consistency in trading. My goal is to merge my technical skills with financial markets, 
-              possibly building AI-powered trading tools in the future.calm down am still learning okk
+              And if you think this is just some basic portfolio—nah, this is next level. I'm always evolving. 🔥
             </p>
-            <p>Actually this is my first project,if u are thinking disis the first thing i hv done in as my project u are 100% wrong ,this projectu see now or reading is something Ai can't do althoug i used em to fix somethigngs </p>
           </div>
         </section>
         <Skills />
@@ -108,7 +104,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-white">Portfolio Website</h3>
             </div>
             <p className="text-zinc-400 text-sm mt-3 leading-relaxed">
-              A fully responsive portfolio built with Next.js and Tailwind CSS, designed to showcase my skills, projects, and experience.its not any kind of site with just html shit, this is on a different level
+              A fully responsive portfolio built with Next.js and Tailwind CSS, showcasing my skills with clean, modern design and smooth animations.
             </p>
             <p className="text-zinc-500 text-xs mt-3">🛠 Tech Used: Next.js, Tailwind CSS, React</p>
             <div className="flex gap-4 mt-4">
