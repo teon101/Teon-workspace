@@ -10,7 +10,7 @@ import SmoothScrollLink from "../components/SmoothScrollLink";
 
 export default function Home() {
   return (
-    <div className="space-y-24">
+    <div className="space-y-24"></div>
       {/* Hero Section */}
       <AnimatedSection
         initial={{ opacity: 0, y: 20 }}
