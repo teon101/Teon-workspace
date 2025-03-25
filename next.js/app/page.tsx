@@ -1,6 +1,5 @@
-"use client";
-
 import { FaCode, FaWrench, FaReact, FaEthereum } from "react-icons/fa";
+import { IconType } from "react-icons";
 import ContactForm from "../components/ContactForm"; 
 import Skills from "@/components/Skills";
 import Image from "next/image";
@@ -20,12 +19,10 @@ export default function Home() {
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
-  // Tech Stack Badge Component
-  const TechBadge = ({ icon: Icon, label }: { icon: React.ComponentType, label: string }) => (
+  // Tech Stack Badge Component - Fixed with proper typing
+  const TechBadge = ({ icon: Icon, label }: { icon: IconType, label: string }) => (
     <div className="flex items-center bg-zinc-700 rounded-full px-3 py-1 text-xs text-zinc-300 gap-2">
-      const TechBadge = ({ icon: Icon, label }: { icon: React.ComponentType<{className?: string}>, label: string }) => (
-  ...
-)
+      <Icon className="w-3 h-3" />
       <span>{label}</span>
     </div>
   );
@@ -79,6 +76,7 @@ export default function Home() {
                 fill
                 style={{ objectFit: 'cover' }}
                 className="rounded-full"
+                priority
               />
             </div>
           </div>
@@ -134,6 +132,8 @@ export default function Home() {
               <SmoothScrollLink 
                 href="https://github.com/teon101/Teon-workspace" 
                 className="text-indigo-400 hover:text-indigo-300 text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </SmoothScrollLink>
@@ -162,6 +162,8 @@ export default function Home() {
               <SmoothScrollLink 
                 href="https://github.com/teon101/Teon-workspace" 
                 className="text-indigo-400 hover:text-indigo-300 text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </SmoothScrollLink>
