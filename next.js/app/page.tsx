@@ -1,4 +1,5 @@
-// @ts-nocheck
+"use client";
+
 import { FaCode, FaWrench, FaReact, FaEthereum } from "react-icons/fa";
 import ContactForm from "../components/ContactForm"; 
 import Skills from "@/components/Skills";
