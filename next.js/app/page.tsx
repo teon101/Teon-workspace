@@ -83,8 +83,12 @@ export default function Home() {
               Beyond coding, I dive into forex trading, analyzing market trends and refining my strategies. The goal? To merge AI, tech, and finance—maybe even build an AI-powered trading tool in the future. 🚀
             </p>
             <p className="text-lg leading-relaxed transition-all duration-300 hover:text-gray-100">
-              And if you think this is just some basic portfolio—nah, this is next level. I'm always evolving. 🔥<br>Stay locked IN</br>
+              And if you think this is just some basic portfolio—nah, this is next level. I'm always evolving. 🔥
             </p>
+            <p className="text-blue-400 font-extrabold tracking-wide uppercase drop-shadow-lg">
+                STAY LOCKED IN...
+          </p>
+
           </div>
         </section>
         <Skills />
