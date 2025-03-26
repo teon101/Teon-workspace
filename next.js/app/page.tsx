@@ -30,6 +30,10 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl text-zinc-400">
               Frontend & Web3 Developer | Designer
             </h2>
+            <p className="text-indigo-400 text-lg font-bold mt-4 tracking-wide">
+            ⚙️ Still in development... Stay tuned! 🔥
+            </p>
+
             <p className="text-lg text-zinc-300 max-w-xl">
               I craft clean, responsive websites with modern technologies that help businesses grow and reach their goals. I also build smart contracts on different blockchains and testnets—delivering high-performance solutions that don't just look good, they work. Whether it's interactive UIs or Web3 development, I bring ideas to life.
               <br /><br />
