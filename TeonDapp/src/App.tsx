@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    ethereum?: any;
+  }
+}
+
 import { useState } from "react";
 import { getContract } from "./utils/web3";
 import { ethers } from "ethers";
@@ -9,14 +15,15 @@ export default function App() {
   const [newName, setNewName] = useState<string>("");
 
   async function connectWallet() {
-    if (window.ethereum) {
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner();
-      setAccount(await signer.getAddress());
-    } else {
-      alert("MetaMask is required!");
-    }
+  if (typeof window !== "undefined" && window.ethereum) {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+    setAccount(await signer.getAddress());
+  } else {
+    alert("MetaMask is required!");
   }
+}
+
 
   async function fetchGreeting() {
     const contract = await getContract();
