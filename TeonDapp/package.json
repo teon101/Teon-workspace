@@ -1,3 +1,6 @@
+"scripts": {
+  "postinstall": "tsc --build || true"
+}
 {
   "name": "vite-react-typescript-starter",
   "private": true,
