@@ -1,9 +1,9 @@
-import { ethers, Contract, BrowserProvider, Signer, InterfaceAbi } from "ethers";
+import { ethers, Contract, BrowserProvider, Signer, InterfaceAbi, JsonFragment } from "ethers";
 
 const contractAddress = "0xde15618339f754841fa2d354a74f395f63b14b5fd29eb98a8b4e235a0789e7dd";
 
-// Explicitly typed ABI
-const contractABI: InterfaceAbi = [
+// Explicitly typed ABI using JsonFragment array
+const contractABI: ReadonlyArray<JsonFragment> = [
   { 
     inputs: [], 
     stateMutability: "nonpayable", 
@@ -18,19 +18,51 @@ const contractABI: InterfaceAbi = [
     name: "NameChanged",
     type: "event"
   },
-  // ... rest of your ABI entries
-] as const; // 'as const' ensures TypeScript treats this as a literal type
+  {
+    inputs: [{ internalType: "string", name: "_newName", type: "string" }],
+    name: "changeName",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    inputs: [],
+    name: "greet",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    inputs: [],
+    name: "name",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "view",
+    type: "function"
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function"
+  }
+] as const;
 
 export async function getContract(signer?: Signer): Promise<Contract> {
   if (typeof window === 'undefined') {
-    throw new Error("Window object not available");
+    throw new Error("Window object not available (server-side rendering)");
   }
 
   if (!window.ethereum) {
-    throw new Error("Ethereum provider not found");
+    throw new Error("Ethereum provider not found. Please install MetaMask.");
   }
 
-  const provider = new BrowserProvider(window.ethereum);
-  const usedSigner = signer ?? await provider.getSigner();
-  return new ethers.Contract(contractAddress, contractABI, usedSigner);
+  try {
+    const provider = new BrowserProvider(window.ethereum);
+    const usedSigner = signer ?? await provider.getSigner();
+    return new ethers.Contract(contractAddress, contractABI as InterfaceAbi, usedSigner);
+  } catch (error) {
+    console.error("Error creating contract instance:", error);
+    throw new Error("Failed to initialize contract");
+  }
 }
