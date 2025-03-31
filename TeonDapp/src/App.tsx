@@ -1,81 +1,63 @@
-declare global {
-  interface Window {
-    ethereum?: any;
-  }
-}
-
-import { useState } from "react";
-import { getContract } from "./utils/web3";
-import { ethers } from "ethers";
-import './App.css';
+import { useState } from 'react';
+import { ethers } from 'ethers';
+import { getContract } from './utils/web3';
 
 export default function App() {
-  const [account, setAccount] = useState<string | null>(null);
-  const [greeting, setGreeting] = useState<string>("");
-  const [newName, setNewName] = useState<string>("");
+  const [greeting, setGreeting] = useState('');
+  const [newName, setNewName] = useState('');
 
-  async function connectWallet() {
-  if (typeof window !== "undefined" && window.ethereum) {
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    const signer = await provider.getSigner();
-    setAccount(await signer.getAddress());
-  } else {
-    alert("MetaMask is required!");
-  }
-}
-
-
-  async function fetchGreeting() {
-    const contract = await getContract();
-    const result = await contract.greet();
-    setGreeting(result);
+  async function loadGreeting() {
+    try {
+      const contract = await getContract();
+      const result = await contract.greet();
+      setGreeting(result);
+    } catch (error) {
+      console.error('Error loading greeting:', error);
+    }
   }
 
   async function changeUserName() {
     if (!newName) return alert("Enter a name first!");
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    const signer = await provider.getSigner();
-    const contract = await getContract(signer);
-    const tx = await contract.changeName(newName);
-    await tx.wait();
-    alert("Name changed successfully!");
+    
+    try {
+      const provider = new ethers.BrowserProvider(window.ethereum!);
+      const signer = await provider.getSigner();
+      const contract = await getContract(signer);
+      const tx = await contract.changeName(newName);
+      await tx.wait();
+      alert("Name changed successfully!");
+    } catch (error) {
+      console.error('Error changing name:', error);
+      alert("Error changing name");
+    }
   }
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
-      <div className="bg-gray-800 p-8 rounded-xl shadow-lg w-96 text-center">
-      <h1 className="text-2xl font-bold mb-4">Teon's Cool App</h1>
-
-        
-        <button
-          className="w-full bg-blue-600 hover:bg-blue-500 py-2 rounded-md transition mb-3"
-          onClick={connectWallet}
+      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-96 text-center">
+        <h1 className="text-3xl font-bold mb-4">Icon's Cool App</h1>
+        <p>Current Greeting: {greeting}</p>
+        <button 
+          onClick={loadGreeting}
+          className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded mt-4"
         >
-          {account ? "Connected" : "Connect Wallet"}
+          Load Greeting
         </button>
-        <p className="text-sm text-gray-400 mb-4">{account || "Not connected"}</p>
-
-        <button
-          className="w-full bg-green-600 hover:bg-green-500 py-2 rounded-md transition mb-3"
-          onClick={fetchGreeting}
-        >
-          Get Greeting
-        </button>
-        <p className="mb-4 text-lg">{greeting}</p>
-
-        <input
-          className="w-full p-2 rounded-md bg-gray-700 text-white border-none mb-2"
-          type="text"
-          placeholder="Enter new name"
-          onChange={(e) => setNewName(e.target.value)}
-        />
-
-        <button
-          className="w-full bg-yellow-500 hover:bg-yellow-400 py-2 rounded-md transition"
-          onClick={changeUserName}
-        >
-          Change Name
-        </button>
+        <div className="mt-4">
+          <input
+            type="text"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+            className="text-black p-2 rounded w-full"
+            placeholder="Enter new name"
+          />
+          <button
+            onClick={changeUserName}
+            className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded mt-2 w-full"
+          >
+            Change Name
+          </button>
+        </div>
       </div>
     </div>
   );
