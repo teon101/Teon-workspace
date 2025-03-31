@@ -1,8 +1,14 @@
-import { ethers } from "ethers";
+import { ethers, Contract, BrowserProvider, Signer, InterfaceAbi } from "ethers";
 
-const contractAddress = "0xde15618339f754841fa2d354a74f395f63b14b5fd29eb98a8b4e235a0789e7dd"; // Replace with your actual contract address
+declare global {
+  interface Window {
+    ethereum?: any;
+  }
+}
 
-const contractABI = [
+const contractAddress = "0xde15618339f754841fa2d354a74f395f63b14b5fd29eb98a8b4e235a0789e7dd"; // Verify this is correct
+
+const contractABI: InterfaceAbi = [
   { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
   {
     "anonymous": false,
@@ -43,8 +49,12 @@ const contractABI = [
   }
 ];
 
-export async function getContract(signer: ethers.Signer | null = null) {
-  const provider = new ethers.BrowserProvider(window.ethereum);
-  if (signer) return new ethers.Contract(contractAddress, contractABI, signer);
-  return new ethers.Contract(contractAddress, contractABI, provider);
+export async function getContract(signer?: Signer): Promise<Contract> {
+  if (!window.ethereum) {
+    throw new Error("Ethereum provider not found. Please install MetaMask.");
+  }
+
+  const provider = new BrowserProvider(window.ethereum);
+  const usedSigner = signer ?? await provider.getSigner();
+  return new Contract(contractAddress, contractABI, usedSigner);
 }
